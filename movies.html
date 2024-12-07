@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Ghibli</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="icon" type="image/x-icon" href="img/logogo.png">
+</head>
+<style>
+    header {
+      background: url(img/photogrid.png);
+      background-size: cover;
+      background-position: center;
+      min-height: 1000px;
+      }
+
+    .header-text {
+      background: rgba(0, 0, 0, 0.6);
+      max-width: 1000px;
+      margin: 50px auto;
+      text-align: left;
+      border-radius: 10px;
+      padding: 20px;
+      }
+
+    .header-text h2,h2,h1,h4 {
+      font-size: 35px !important;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      }
+
+    .header-text p, p {
+      font-size: 25px;
+      margin: 0;
+      padding: 0;
+      }
+
+
+    .navbar-fixed {
+      margin: 0;
+      }
+
+    nav {
+      top: 0;
+      left: 0;
+      position: fixed; 
+      z-index: 999; 
+      width: 100%;
+      }
+
+    nav .brand-logo {
+      font-size: 1.5rem;
+    }
+
+    
+    .dropdown-content li > a {
+      color: rgb(239, 230, 216) !important; 
+    }
+
+
+    .dropdown-content li > a:hover {
+      color: #75a770 !important; 
+    }
+
+    .sidenav-overlay {
+      z-index: 400;
+      display: 0;
+      opacity: none; 
+    }
+
+    .sidenav {
+      z-index: 999;  
+    }
+
+    body {
+      background-image: url('img/bodybg.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Jost", sans-serif;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card {
+      height: 430px;
+    }
+
+    .card-content {
+      height: 250px;
+    overflow: hidden;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold !important;
+    }
+
+    .card-content p {
+      font-size: 14px !important;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    .collapsible-body p {
+      text-align: justify;
+    }
+
+    .page-footer {
+      padding-top: 20px;
+    }
+
+   
+    .collection-item {
+      background-color: none; 
+      color: #000; 
+    }
+    
+    @media screen and (max-width: 670px){
+        header {
+            min-height: 500px;
+            }}
+
+    .card-1 {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+    .ghibli-card-content {
+        background-color: whitesmoke;
+        color: black;
+        padding: 10px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ghibli-card-content h5 {
+        color: darkolivegreen;
+        font-size: 30px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .video-frame {
+        width: 100%;
+        height: 200px;
+    }
+
+  </style>
+<body>
+
+ <!-- Navbar -->
+ <header>
+    <div class="container">
+      <div class="navbar-fixed">
+        <nav style="background-color: rgba(0, 0, 0, 0.7)" class="nav-wrapper z-depth-2">
+          <div class="container">
+            <a href="#" class="brand-logo">Studio Ghibli</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-home">
+                  <i class="material-icons left">home</i> Home
+                </a>
+                <ul id="dropdown-home" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.html#about">About</a></li>
+                  <li><a href="index.html#studio-treasures">Studio Treasures</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-movies">
+                  <i class="material-icons left">movie</i> Movies
+                </a>
+                <ul id="dropdown-movies" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="movies.html">Movies</a></li>
+                  <li><a href="movies.html#top-films">Top Films</a></li>
+                  <li><a href="movies.html#awards">Awards</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-characters">
+                  <i class="material-icons left">account_circle</i> Characters
+                </a>
+                <ul id="dropdown-characters" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="characters.html">Characters</a></li>
+                  <li><a href="characters.html#famous-characters">Famous Characters</a></li>
+                  <li><a href="characters.html#sceneries">Sceneries</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-gallery">
+                  <i class="material-icons left">photo</i> Gallery
+                </a>
+                <ul id="dropdown-gallery" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="gallery.html#fan-art">Fan Art</a></li>
+                  <li><a href="gallery.html#movie-clips">Movie Clips</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-news">
+                  <i class="material-icons left">newspaper</i> News
+                </a>
+                <ul id="dropdown-news" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="news.html">News</a></li>
+                  <li><a href="news.html#latest-news">Latest News</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ghibliusa?igsh=NmM3bXR2ZmFjd3Bj" class="tooltipped btn-floating btn-small transparent" data-tooltip="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/GhibliUSA?mibextid=ZbWKwL" class="tooltipped btn-floating btn-small transparent" data-tooltip="Facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/GhibliUSA?t=f6znEvyE6U7XGMK63NQz6w&s=09" class="tooltipped btn-floating btn-small transparent" data-tooltip="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+
+      <!-- Mobile Menu -->
+        <ul class="sidenav green lighten-4" id="mobile-menu">
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-home-mobile">
+              <i class="material-icons left">home</i> Home
+            </a>
+            <ul id="dropdown-home-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#studio-treasures">Studio Treasures</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-movies-mobile">
+              <i class="material-icons left">movie</i> Movies
+            </a>
+            <ul id="dropdown-movies-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="movies.html">Movies</a></li>
+              <li><a href="movies.html#top-films">Top Films</a></li>
+              <li><a href="movies.html#awards">Awards</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-characters-mobile">
+              <i class="material-icons left">account_circle</i> Characters
+            </a>
+            <ul id="dropdown-characters-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="characters.html">Characters</a></li>
+              <li><a href="characters.html#famous-characters">Famous Characters</a></li>
+              <li><a href="characters.html#sceneries">Sceneries</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-gallery-mobile">
+              <i class="material-icons left">photo</i> Gallery
+            </a>
+            <ul id="dropdown-gallery-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="gallery.html#fan-art">Fan Art</a></li>
+              <li><a href="gallery.html#movie-clips">Movie Clips</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-news-mobile">
+              <i class="material-icons left">newspaper</i> News
+            </a>
+            <ul id="dropdown-news-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="news.html">News</a></li>
+              <li><a href="news.html#latest-news">Latest News</a></li>
+            </ul>
+          </li>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container scrollspy" style="padding: 30px" id="top-films">
+    <h4 class="center-align">Studio Ghibli Films</h4>
+    <div class="row">
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/pink.webp" class="materialboxed" alt="Spirited Away">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Spirited Away (2001)</span>
+            <p>A girl discovers a world of spirits and magic.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/toto.webp" class="materialboxed" alt="My Neighbor Totoro">
+          </div>
+          <div class="card-content">
+            <span class="card-title">My Neighbor Totoro (1988)</span>
+            <p>Two sisters meet the magical Totoro.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/moving.webp" class="materialboxed" alt="Howl's Moving Castle">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Howl's Moving Castle (2004)</span>
+            <p>A girl seeks help from a wizard in a castle.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/mononoke.webp" class="materialboxed" alt="Princess Mononoke">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Princess Mononoke (1997)</span>
+            <p>A prince fights to protect nature.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/ponyooo.webp" class="materialboxed" alt="Ponyo">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Ponyo (2008)</span>
+            <p>A goldfish dreams of becoming human.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/kiki.webp" class="materialboxed" alt="Kiki's Delivery Service">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Kiki's Delivery Service (1989)</span>
+            <p>A witch starts a delivery service.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/grave.webp" class="materialboxed" alt="Grave of the Fireflies">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Grave of the Fireflies (1988)</span>
+            <p>Two siblings struggle to survive war.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/castlee.webp" class="materialboxed" alt="Castle in the Sky">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Castle in the Sky (1986)</span>
+            <p>Two kids search for a floating castle.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/whisper.webp" class="materialboxed" alt="Whisper of the Heart">
+          </div>
+          <div class="card-content">
+            <span class="card-title">Whisper of the Heart (1995)</span>
+            <p>A girl discovers her love for writing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/rises.webp" class="materialboxed" alt="The Wind Rises">
+          </div>
+          <div class="card-content">
+            <span class="card-title">The Wind Rises (2013)</span>
+            <p>An engineer dreams of creating planes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/arriety.gif" class="materialboxed" alt="The Secret World of Arrietty">
+          </div>
+          <div class="card-content">
+            <span class="card-title">The Secret World of Arrietty (2010)</span>
+            <p>A boy meets a tiny girl living in his house.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/hill.gif" class="materialboxed" alt="From Up on Poppy Hill">
+          </div>
+          <div class="card-content">
+            <span class="card-title">From Up on Poppy Hill (2011)</span>
+            <p>Two students save a clubhouse and uncover their past.</p>
+          </div>
+        </div>
+      </div>
+     </div>
+   </div>
+  
+
+   <section class="ghibli-section">
+    <h2 class="ghibli-title center-align" style="padding: 20px;">Ghibli Movie Trailers</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card-1">
+                    <div class="card-content ghibli-card-content">
+                        <h5>Ponyo</h5>
+                    </div>
+                    <div class="card-image">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/h6XP82TyFWw?si=H3k3x7aTIAAEtAxn" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card-1">
+                    <div class="card-content ghibli-card-content">
+                        <h5>Howl's Moving Castle</h5>
+                    </div>
+                    <div class="card-image">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/ARCQf2CEr8k?si=j1xP3YIRcg7j-nSG" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card-1">
+                    <div class="card-content ghibli-card-content">
+                        <h5>Spirited Away</h5>
+                    </div>
+                    <div class="card-image">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/fDUFP7EeXLE?si=UOxyNmqhnBr3ohhX" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card-1">
+                    <div class="card-content ghibli-card-content">
+                        <h5>My Neighbor Totoro</h5>
+                    </div>
+                    <div class="card-image">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/HaLISMAGdOE?si=s5bAktXoBziCQFnu" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card-1">
+                    <div class="card-content ghibli-card-content">
+                        <h5>Castle in the Sky</h5>
+                    </div>
+                    <div class="card-image">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/5lMRfLJGXSM?si=2z6k3i24PKF6daUU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card-1">
+                    <div class="card-content ghibli-card-content">
+                        <h5>The Wind Rises</h5>
+                    </div>
+                    <div class="card-image">
+                        <iframe class="video-frame" src="https://www.youtube.com/embed/TXuswYJFrDM?si=KTmd5zJlNDSHAmES" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <div class="container" id="awards">
+  <h4 class="center-align black-text">Awards and Recognitions</h4>
+
+  <ul class="collapsible popout">
+
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons circle yellow hide-on-med-and-down">star</i>
+        <span class="title">2002: Academy Award for Best Animated Feature - Spirited Away</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="row">
+            <div class="col s12 m6 l6">
+            <img src="img/sa.jpg" alt="Spirited Away" class="responsive-img">
+          </div>
+          <div class="col s12 m6 l6">
+            <h2 class="flow-text">SPIRITED AWAY</h2>
+            <p class="flow-text">Spirited Away, directed by Hayao Miyazaki, was released in 2001 and quickly became a global phenomenon. It captivated audiences with its stunning animation, deep storytelling, and vibrant characters. Set in a mystical world of spirits, gods, and mythical creatures, the film follows the journey of Chihiro, a young girl trapped in a bathhouse ruled by spirits. Spirited Away won multiple awards, including the prestigious Academy Award for Best Animated Feature in 2002, making it the first (and only) hand-drawn animated film to win in this category. Its impact on the world of animation is profound, and it remains one of the highest-grossing films ever in Japan.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons circle yellow hide-on-med-and-down">star</i>
+        <span class="title">2006: Venice Film Festival - Golden Osella for Howl's Moving Castle</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="row">
+            <div class="col s12 m6 l6">
+            <img src="img/hmc.jpg" alt="Howl's Moving Castle" class="responsive-img">
+          </div>
+          <div class="col s12 m6 l6">
+            <h2 class="flow-text">HOWL'S MOVING CASTLE</h2>
+            <p class="flow-text">Howl's Moving Castle, another cinematic masterpiece from Hayao Miyazaki, premiered in 2004. The film was an adaptation of the 1986 novel by Diana Wynne Jones, with Miyazaki's unique storytelling style transforming it into a visually stunning and thought-provoking work of art. Set in a war-torn kingdom, the film follows Sophie, a young woman who is cursed to live in the body of an old woman. She embarks on an adventure with Howl, a wizard with a dark secret. The film was awarded the Golden Osella for Best Technical Contribution at the Venice Film Festival in 2006, recognizing its groundbreaking animation and beautiful art direction. Howl's Moving Castle has since become a beloved classic and an icon in animation history.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons circle yellow hide-on-med-and-down">star</i>
+        <span class="title">2005: Japan Academy Prize for Animation of the Year - Howl's Moving Castle</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="row">
+            <div class="col s12 m6 l6">
+            <img src="img/hmc2.jpg" alt="Howl's Moving Castle Japan Academy Prize" class="responsive-img">
+          </div>
+          <div class="col s12 m6 l6">
+            <h2 class="flow-text">HOWL'S MOVING CASTLE</h2>
+            <p class="flow-text">Howl's Moving Castle was not only a commercial success but also a critical triumph in Japan. In 2005, it was honored with the prestigious Japan Academy Prize for Animation of the Year. This recognition cemented Miyazaki's reputation as one of the greatest directors in the world of animation. The film's innovative use of CGI, combined with traditional hand-drawn animation, was groundbreaking at the time. The story of Howl's Moving Castle explores themes of love, war, and self-discovery, resonating with audiences on a deep emotional level. It remains one of the most visually impressive and culturally significant films of the 21st century.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons circle yellow hide-on-med-and-down">star</i>
+        <span class="title">1997: Mainichi Film Award - Princess Mononoke</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="row">
+            <div class="col s12 m6 l6">
+            <img src="img/pm.jpg" alt="Princess Mononoke" class="responsive-img">
+          </div>
+          <div class="col s12 m6 l6">
+            <h2 class="flow-text">PRINCESS MONONOKE</h2>
+            <p class="flow-text">Princess Mononoke, released in 1997, was a groundbreaking film that tackled important environmental and social issues. The story follows Ashitaka, a young prince, as he becomes embroiled in a conflict between the gods of the forest and the humans exploiting the land. The film's mature themes and striking animation set it apart from other animated films of the time. It was awarded the Mainichi Film Award for Best Animation, reflecting its artistic and cultural significance. Princess Mononoke was a critical success and became one of the highest-grossing films in Japan, establishing Studio Ghibli as a major force in global cinema.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons circle yellow hide-on-med-and-down">star</i>
+        <span class="title">1989: Animage Grand Prix - My Neighbor Totoro</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="row">
+            <div class="col s12 m6 l6">
+            <img src="img/mnt.jpg" alt="My Neighbor Totoro" class="responsive-img">
+          </div>
+          <div class="col s12 m6 l6">
+            <h2 class="flow-text">MY NEIGHBOR TOTORO</h2>
+            <p class="flow-text">My Neighbor Totoro, released in 1988, is one of Studio Ghibli's most iconic and beloved films. The story revolves around two young sisters who move to the countryside and discover magical creatures, including the friendly forest spirit Totoro. The film is a celebration of childhood innocence, the beauty of nature, and the bond between family members. Despite its initial modest box office success, My Neighbor Totoro has become a cultural touchstone and is often regarded as one of the greatest animated films of all time. In 1989, it was awarded the Animage Grand Prix, a testament to its timeless appeal and universal themes.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons circle yellow hide-on-med-and-down">star</i>
+        <span class="title">2024: Award for Best Animated Feature - The Boy and the Heron</span>
+      </div>
+      <div class="collapsible-body">
+        <div class="row">
+            <div class="col s12 m6 l6">
+            <img src="img/bh.jpg" alt="The Boy and the Heron" class="responsive-img">
+          </div>
+          <div class="col s12 m6 l6">
+            <h2 class="flow-text">THE BOY AND THE HERON</h2>
+            <p class="flow-text">The Boy and the Heron, released in 2024, marks a significant milestone in Studio Ghibli's legacy, showcasing the timeless storytelling of Hayao Miyazaki. The film follows a young boy who embarks on a journey of self-discovery, guided by the mystical presence of a heron, against a backdrop of surreal landscapes. The film is a beautiful exploration of themes such as loss, healing, and the bond between nature and the human spirit. Despite being a more recent addition to Ghibli's repertoire, The Boy and the Heron has already captivated audiences worldwide with its breathtaking animation and emotionally resonant narrative. In 2024, it was awarded the prestigious Best Animated Feature Award, further cementing its place in the rich history of animated cinema.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+ <!-- Footer -->
+ <footer class="page-footer grey">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4">
+        <h5 class="black-text-text">Share Your Studio Ghibli Favorites</h5>
+        <p class="black-text">Let us know your favorite Ghibli movie and your name!</p>
+        <form id="ghibliForm">
+          <div class="input-field">
+            <input id="name" type="text" class="black-text" required>
+            <label for="name" class="black-text">Your Name</label>
+          </div>
+          <div class="input-field">
+            <input id="favorite_movie" type="text" class="black-text" required>
+            <label for="favorite_movie" class="black-text">Your Favorite Ghibli Movie</label>
+          </div>
+          <div class="center-align">
+            <button class="btn waves-effect waves-light green lighten-2" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="col s12 m4">
+        <h5 class="wblack-text">Fans’ Favorite Movies</h5>
+        <ul id="commentsList" class="collection grey">
+        </ul>
+      </div>
+      <div class="col s12 m4">
+        <h5 class="wblack-text">Studio Ghibli Playlist</h5>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO30nlUS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container center-align">
+      © 2024 Studio Ghibli. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+  $('.sidenav').sidenav();
+  $('.tooltipped').tooltip();
+  $('.scrollspy').scrollSpy();
+  $('.carousel').carousel();
+  $('.materialboxed').materialbox();
+  $('.parallax').parallax();
+  $('.dropdown-trigger').dropdown();
+  $('.collapsible').collapsible();
+});
+  $(document).ready(function () {
+      const commentsList = $('#commentsList');
+
+      function loadComments() {
+        const savedComments = JSON.parse(localStorage.getItem('ghibliComments')) || [];
+        savedComments.forEach(comment => {
+          commentsList.append(
+            `<li class="collection-item">"${comment.movie}" - <strong>${comment.name}</strong></li>`
+          );
+        });
+      }
+
+      function saveComment(name, movie) {
+        const savedComments = JSON.parse(localStorage.getItem('ghibliComments')) || [];
+        savedComments.push({ name, movie });
+        localStorage.setItem('ghibliComments', JSON.stringify(savedComments));
+      }
+
+      loadComments();
+
+      $('#ghibliForm').on('submit', function (e) {
+        e.preventDefault();
+
+        const name = $('#name').val().trim();
+        const favoriteMovie = $('#favorite_movie').val().trim();
+
+        if (name && favoriteMovie) {
+          commentsList.append(
+            `<li class="collection-item">"${favoriteMovie}" - <strong>${name}</strong></li>`
+          );
+          saveComment(name, favoriteMovie); 
+          $('#ghibliForm')[0].reset(); 
+        } else {
+          M.toast({ html: 'Please fill out both fields!', classes: 'red' });
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Ghibli</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="icon" type="image/x-icon" href="img/logogo.png">
+  <style>
+      header {
+        background: url(img/ghibli-banner.jpg);
+        background-size: cover;
+        background-position: center;
+        min-height: 1000px;
+        }
+
+      .header-text {
+        background: rgba(0, 0, 0, 0.6);
+        max-width: 1000px;
+        margin: 50px auto;
+        text-align: left;
+        border-radius: 10px;
+        padding: 20px;
+        }
+
+      .header-text h2,h2,h1 {
+        font-size: 35px !important;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        }
+
+      .header-text p, p {
+        font-size: 25px;
+        margin: 0;
+        padding: 0;
+        }
+
+
+      .navbar-fixed {
+        margin: 0;
+        }
+
+      nav {
+        top: 0;
+        left: 0;
+        position: fixed; 
+        z-index: 999; 
+        width: 100%;
+        }
+
+      nav .brand-logo {
+        font-size: 1.5rem;
+      }
+
+      
+      .dropdown-content li > a {
+        color: rgb(239, 230, 216) !important; 
+      }
+
+
+      .dropdown-content li > a:hover {
+        color: #75a770 !important; 
+      }
+
+      .sidenav-overlay {
+        z-index: 400;
+        display: 0;
+        opacity: none; 
+      }
+
+      .sidenav {
+        z-index: 999;  
+      }
+
+      body {
+        background-image: url('img/bodybg2.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+
+      main {
+        flex: 1 0 auto;
+        }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Jost", sans-serif;
+        }
+        
+
+      .card-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        }
+
+      .welcome-message {
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5); 
+        padding-top: 20px;
+        border-radius: 10px;
+        }
+
+       
+      .container {
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
+      h2 {
+        padding-top: 30px; 
+      }
+
+      .carousel {
+        height: 400px;
+        z-index: 700;
+      }
+
+      .carousel .carousel-item img {
+        width: 300px;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .carousel .carousel-item img:hover {
+        transform: scale(1.1);
+      }
+
+      .carousel-caption {
+        position: sticky;
+        bottom: 10px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        display: block;
+        text-align: justify;
+        width: 300px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      }
+    
+      .text-justify {
+        text-align: justify !important;
+      }
+
+
+      .text-margin {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+
+      .page-footer {
+      padding-top: 20px;
+    }
+
+   
+      .collection-item {
+        background-color: none; 
+        color: #000; 
+      }
+      
+      @media screen and (max-width: 670px){
+            header {
+                min-height: 500px;
+            }}
+  </style>
+
+  <!-- Navbar -->
+    <header>
+      <div class="container">
+        <div class="navbar-fixed">
+          <nav style="background-color: rgba(0, 0, 0, 0.7)" class="nav-wrapper z-depth-2">
+            <div class="container">
+              <a href="#" class="brand-logo">Studio Ghibli</a>
+              <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                <i class="material-icons">menu</i>
+              </a>
+              <ul class="right hide-on-med-and-down">
+                <li>
+                  <a class="dropdown-trigger" href="#!" data-target="dropdown-home">
+                    <i class="material-icons left">home</i> Home
+                  </a>
+                  <ul id="dropdown-home" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#studio-treasures">Studio Treasures</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="dropdown-trigger" href="#!" data-target="dropdown-movies">
+                    <i class="material-icons left">movie</i> Movies
+                  </a>
+                  <ul id="dropdown-movies" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="movies.html#top-films">Top Films</a></li>
+                    <li><a href="movies.html#awards">Awards</a></li>
+                  </ul>
+                </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-characters">
+                  <i class="material-icons left">account_circle</i> Characters
+                </a>
+                <ul id="dropdown-characters" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="characters.html">Characters</a></li>
+                  <li><a href="characters.html#famous-characters">Famous Characters</a></li>
+                  <li><a href="characters.html#sceneries">Sceneries</a></li>
+                </ul>
+              </li>
+                <li>
+                  <a class="dropdown-trigger" href="#!" data-target="dropdown-gallery">
+                    <i class="material-icons left">photo</i> Gallery
+                  </a>
+                  <ul id="dropdown-gallery" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="gallery.html#fan-art">Fan Art</a></li>
+                    <li><a href="gallery.html#movie-clips">Movie Clips</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="dropdown-trigger" href="#!" data-target="dropdown-news">
+                    <i class="material-icons left">newspaper</i> News
+                  </a>
+                  <ul id="dropdown-news" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="news.html#latest-news">Latest News</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/ghibliusa?igsh=NmM3bXR2ZmFjd3Bj" class="tooltipped btn-floating btn-small transparent" data-tooltip="Instagram">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/GhibliUSA?mibextid=ZbWKwL" class="tooltipped btn-floating btn-small transparent" data-tooltip="Facebook">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://x.com/GhibliUSA?t=f6znEvyE6U7XGMK63NQz6w&s=09" class="tooltipped btn-floating btn-small transparent" data-tooltip="Twitter">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+              </ul>
+
+               <!-- Mobile Menu -->
+          <ul class="sidenav green lighten-4" id="mobile-menu">
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown-home-mobile">
+                <i class="material-icons left">home</i> Home
+              </a>
+              <ul id="dropdown-home-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#studio-treasures">Studio Treasures</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown-movies-mobile">
+                <i class="material-icons left">movie</i> Movies
+              </a>
+              <ul id="dropdown-movies-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="movies.html#top-films">Top Films</a></li>
+                <li><a href="movies.html#awards">Awards</a></li>
+              </ul>
+            </li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-characters-mobile">
+              <i class="material-icons left">account_circle</i> Characters
+            </a>
+            <ul id="dropdown-characters-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="characters.html">Characters</a></li>
+              <li><a href="characters.html#famous-characters">Famous Characters</a></li>
+              <li><a href="characters.html#sceneries">Sceneries</a></li>
+            </ul>
+          </li>
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown-gallery-mobile">
+                <i class="material-icons left">photo</i> Gallery
+              </a>
+              <ul id="dropdown-gallery-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="gallery.html#fan-art">Fan Art</a></li>
+                <li><a href="gallery.html#movie-clips">Movie Clips</a></li>
+              </ul>
+            </li>
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown-news-mobile">
+                <i class="material-icons left">newspaper</i> News
+              </a>
+              <ul id="dropdown-news-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                <li><a href="news.html">News</a></li>
+                <li><a href="news.html#latest-news">Latest News</a></li>
+              </ul>
+            </li>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    
+
+<div class="container green lighten-4 scrollspy" id="about">
+  <div class="section">
+    <h3 class="center-align">About Studio Ghibli</h3>
+    <p class="flow-text center-align text-justify text-margin">
+      Studio Ghibli is a renowned Japanese animation studio founded in 1985 by Hayao Miyazaki, Isao Takahata, and Toshio Suzuki. Known for its breathtaking visuals and heartfelt storytelling, Studio Ghibli has created timeless masterpieces that captivate audiences worldwide.
+    </p>
+
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/hayao.webp" alt="Hayao Miyazaki">
+          </div>
+          <div class="card-content">
+            <h5 style="font-weight: bold;">Hayao Miyazaki</h5>
+            <p class="text-justify">The visionary director behind iconic films such as <em>My Neighbor Totoro</em> and <em>Spirited Away</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/isao.jpg" alt="Isao Takahata">
+          </div>
+          <div class="card-content">
+            <h5 style="font-weight: bold;">Isao Takahata</h5>
+            <p class="text-justify">A masterful director known for his emotional storytelling in films like <em>Grave of the Fireflies</em>.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="img/toshio.jpg" alt="Toshio Suzuki">
+          </div>
+          <div class="card-content">
+            <h5 style="font-weight: bold;">Toshio Suzuki</h5>
+            <p class="text-justify">The producer who brought Studio Ghibli's vision to life, ensuring its global success.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4 class="center-align">A Brief History</h4>
+      <p class="flow-text text-justify text-margin">
+        Studio Ghibli's journey began with its first feature film, <em>Castle in the Sky</em> (1986). Over the years, it has produced globally acclaimed films like <em>Spirited Away</em>, which won the Academy Award for Best Animated Feature in 2003. The studio continues to inspire creativity and celebrate the wonders of life through its magical storytelling.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="img/sopi.jpg" alt="Studio Ghibli"></div>
+    </div>
+  </div>
+
+
+  <div class="container scrollspy" id="studio-treasures">
+    <h2 class="center-align flow-text">Gallery of Timeless Ghibli Magic</h2>
+    <p class="flow-text center-align">Immerse yourself in the stunning beauty of Studio Ghibli's worlds with these iconic images.</p>
+    
+    <div class="carousel">
+      <a class="carousel-item" href="#one!">
+        <img class="materialboxed" src="img/ponyoo.webp" alt="Ponyo">
+        <div class="carousel-caption">Ponyo - The Magical Sea Creature</div>
+      </a>
+      <a class="carousel-item" href="#two!">
+        <img class="materialboxed" src="img/howlsmoving.webp" alt="Howl's Moving Castle">
+        <div class="carousel-caption">Howl's Moving Castle - A Journey of Magic and Love</div>
+      </a>
+      <a class="carousel-item" href="#three!">
+        <img class="materialboxed" src="img/boyy.gif" alt="The Boy and the Heron">
+        <div class="carousel-caption">The Boy and the Heron - Dreams Meet Reality</div>
+      </a>
+      <a class="carousel-item" href="#four!">
+        <img class="materialboxed" src="img/away.webp" alt="Spirited Away">
+        <div class="carousel-caption">Spirited Away - A World of Wonders</div>
+      </a>
+      <a class="carousel-item" href="#five!">
+        <img class="materialboxed" src="img/totoroo.webp" alt="My Neighbor Totoro">
+        <div class="carousel-caption">Totoro - The Forest Spirit</div>
+      </a>
+    </div>
+  </div>
+  
+
+    <section class="section container green lighten-4">
+        <div class="row">
+            <div class="col s12 center-align">
+                <h1 class="black-text flow-text">Studio Ghibli's Top Picked Movies</h1>
+                <p class="black-text flow-text center-align">Explore the magic of Studio Ghibli's most iconic films, each one a masterpiece of animation and storytelling.</p>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col s12 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/castle.jpg" alt="Castle in the Sky" class="responsive-img materialboxed">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l6 offset-l1 justify-text">
+                <h2 class="green-text text-darken-4 flow-text">Castle in the Sky</h2>
+                <p class="flow-text text-justify">An orphan girl and a boy with a mysterious crystal pendant embark on a journey to find a legendary floating castle, pursued by pirates and secret agents.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l4 push-l7 offset-l1">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/howls.jpg" alt="Howl's Moving Castle" class="responsive-img materialboxed">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l6 pull-l4 justify-text">
+                <h2 class="green-text text-darken-4 flow-text">Howl's Moving Castle</h2>
+                <p class="flow-text text-justify">Sophie, a young woman cursed by a witch into an old woman's body, seeks refuge in a wizard's magical moving castle and becomes entangled in a war of sorcery.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/ponyo.jpg" alt="Ponyo" class="responsive-img materialboxed">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l6 offset-l1 justify-text">
+                <h2 class="green-text text-darken-4 flow-text">Ponyo</h2>
+                <p class="flow-text text-justify">A young goldfish princess named Ponyo escapes the ocean and becomes friends with a human boy, but her transformation upsets the balance of nature.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l4 push-l7 offset-l1">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/spirited.jpg" alt="Spirited Away" class="responsive-img materialboxed">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l6 pull-l4 justify-text">
+                <h2 class="green-text text-darken-4 flow-text">Spirited Away</h2>
+                <p class="flow-text text-justify">Chihiro, a ten-year-old girl, stumbles into a magical world where her parents are transformed into pigs, and she must work in a bathhouse for spirits to save them.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/heron.png" alt="The Boy and the Heron" class="responsive-img materialboxed">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l6 offset-l1 justify-text">
+                <h2 class="green-text text-darken-4 flow-text">The Boy and the Heron</h2>
+                <p class="flow-text text-justify">A young boy dealing with the loss of his mother discovers a magical heron and embarks on a surreal journey into a parallel world of mystery and healing.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l4 push-l7 offset-l1">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/totoro.png" alt="My Neighbor Totoro" class="responsive-img materialboxed">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l6 pull-l4 justify-text">
+                <h2 class="green-text text-darken-4 flow-text">My Neighbor Totoro</h2>
+                <p class="flow-text text-justify">Two sisters move to the countryside to be near their ailing mother and encounter magical creatures, including the lovable forest spirit Totoro.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="img/wind.jpeg" alt="The Wind Rises" class="responsive-img materialboxed">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l6 offset-l1 justify-text">
+                <h2 class="green-text text-darken-4 flow-text">The Wind Rises</h2>
+                <p class="flow-text text-justify">The story of Jiro Horikoshi, the designer of Japanese fighter planes during World War II, and his pursuit of dreams and love in turbulent times.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+ <!-- Footer -->
+ <footer class="page-footer grey">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4">
+        <h5 class="black-text-text">Share Your Studio Ghibli Favorites</h5>
+        <p class="black-text">Let us know your favorite Ghibli movie and your name!</p>
+        <form id="ghibliForm">
+          <div class="input-field">
+            <input id="name" type="text" class="black-text" required>
+            <label for="name" class="black-text">Your Name</label>
+          </div>
+          <div class="input-field">
+            <input id="favorite_movie" type="text" class="black-text" required>
+            <label for="favorite_movie" class="black-text">Your Favorite Ghibli Movie</label>
+          </div>
+          <div class="center-align">
+            <button class="btn waves-effect waves-light green lighten-2" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="col s12 m4">
+        <h5 class="wblack-text">Fans’ Favorite Movies</h5>
+        <ul id="commentsList" class="collection grey">
+        </ul>
+      </div>
+      <div class="col s12 m4">
+        <h5 class="wblack-text">Studio Ghibli Playlist</h5>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO30nlUS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container center-align">
+      © 2024 Studio Ghibli. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+  $('.sidenav').sidenav();
+  $('.tooltipped').tooltip();
+  $('.scrollspy').scrollSpy();
+  $('.carousel').carousel();
+  $('.materialboxed').materialbox();
+  $('.parallax').parallax();
+  $('.dropdown-trigger').dropdown();
+});
+  $(document).ready(function () {
+      const commentsList = $('#commentsList');
+
+      function loadComments() {
+        const savedComments = JSON.parse(localStorage.getItem('ghibliComments')) || [];
+        savedComments.forEach(comment => {
+          commentsList.append(
+            `<li class="collection-item">"${comment.movie}" - <strong>${comment.name}</strong></li>`
+          );
+        });
+      }
+
+      function saveComment(name, movie) {
+        const savedComments = JSON.parse(localStorage.getItem('ghibliComments')) || [];
+        savedComments.push({ name, movie });
+        localStorage.setItem('ghibliComments', JSON.stringify(savedComments));
+      }
+
+      loadComments();
+
+      $('#ghibliForm').on('submit', function (e) {
+        e.preventDefault();
+
+        const name = $('#name').val().trim();
+        const favoriteMovie = $('#favorite_movie').val().trim();
+
+        if (name && favoriteMovie) {
+          commentsList.append(
+            `<li class="collection-item">"${favoriteMovie}" - <strong>${name}</strong></li>`
+          );
+          saveComment(name, favoriteMovie); 
+          $('#ghibliForm')[0].reset(); 
+        } else {
+          M.toast({ html: 'Please fill out both fields!', classes: 'red' });
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Ghibli</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="icon" type="image/x-icon" href="img/logogo.png">
+  <style>
+      header {
+        background: url(img/bannerlast.jpg);
+        background-size: cover;
+        background-position: center;
+        min-height: 1000px;
+        }
+
+      .header-text {
+        background: rgba(0, 0, 0, 0.6);
+        max-width: 1000px;
+        margin: 50px auto;
+        text-align: left;
+        border-radius: 10px;
+        padding: 20px;
+        }
+
+      .header-text h2,h2,h1 {
+        font-size: 35px !important;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        }
+
+      .header-text p, p {
+        font-size: 25px;
+        margin: 0;
+        padding: 0;
+        }
+
+
+      .navbar-fixed {
+        margin: 0;
+        }
+
+      nav {
+        top: 0;
+        left: 0;
+        position: fixed; 
+        z-index: 999; 
+        width: 100%;
+        }
+
+      nav .brand-logo {
+        font-size: 1.5rem;
+      }
+
+      
+      .dropdown-content li > a {
+        color: rgb(239, 230, 216) !important; 
+      }
+
+
+      .dropdown-content li > a:hover {
+        color: #75a770 !important; 
+      }
+
+      .sidenav-overlay {
+        z-index: 400;
+        display: 0;
+        opacity: none; 
+      }
+
+      .sidenav {
+        z-index: 999;  
+      }
+
+      body {
+        background-image: url('img/bodybg2.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+
+      main {
+        flex: 1 0 auto;
+        }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Jost", sans-serif;
+        }
+
+      .news-section {
+        padding: 30px 10px;
+        background-color: #f8f9fa;
+    }
+
+        .news-header {
+            font-weight: bold;
+            color: #004d40;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        .news-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .news-item img {
+            width: 100%;
+            height: auto;
+            max-width: 400px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            max-width: calc(100% - 170px);
+            margin-left: 20px;
+        }
+
+        .news-title {
+            margin: 0 0 5px;
+            color: #00796b;
+            font-weight: bold;
+        }
+
+        .news-title:hover {
+            text-decoration: underline;
+        }
+
+        .news-description {
+            color: #555;
+            text-align: justify;
+        }
+
+        .news-date {
+            color: #888;
+            margin-top: 5px;
+        }
+
+    @media only screen and (max-width: 600px) {
+        .news-item {
+            flex-direction: column;
+        }
+        .news-content {
+            max-width: 100%;
+            margin-left: 0;
+        }
+    }
+
+
+      .page-footer {
+      padding-top: 20px;
+    }
+
+   
+      .collection-item {
+        background-color: none; 
+        color: #000; 
+      }
+    
+      @media screen and (max-width: 670px){
+            header {
+                min-height: 500px;
+            }}
+  </style>
+
+
+<!-- Navbar -->
+<header>
+    <div class="container">
+      <div class="navbar-fixed">
+        <nav style="background-color: rgba(0, 0, 0, 0.7)" class="nav-wrapper z-depth-2">
+          <div class="container">
+            <a href="#" class="brand-logo">Studio Ghibli</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-home">
+                  <i class="material-icons left">home</i> Home
+                </a>
+                <ul id="dropdown-home" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.html#about">About</a></li>
+                  <li><a href="index.html#studio-treasures">Studio Treasures</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-movies">
+                  <i class="material-icons left">movie</i> Movies
+                </a>
+                <ul id="dropdown-movies" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="movies.html">Movies</a></li>
+                  <li><a href="movies.html#top-films">Top Films</a></li>
+                  <li><a href="movies.html#awards">Awards</a></li>
+                </ul>
+              </li>
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown-characters">
+                <i class="material-icons left">account_circle</i> Characters
+              </a>
+              <ul id="dropdown-characters" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                <li><a href="characters.html">Characters</a></li>
+                <li><a href="characters.html#famous-characters">Famous Characters</a></li>
+                <li><a href="characters.html#sceneries">Sceneries</a></li>
+              </ul>
+            </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-gallery">
+                  <i class="material-icons left">photo</i> Gallery
+                </a>
+                <ul id="dropdown-gallery" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="gallery.html">Gallery</a></li>
+                  <li><a href="gallery.html#fan-art">Fan Art</a></li>
+                  <li><a href="gallery.html#movie-clips">Movie Clips</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-news">
+                  <i class="material-icons left">newspaper</i> News
+                </a>
+                <ul id="dropdown-news" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+                  <li><a href="news.html">News</a></li>
+                  <li><a href="news.html#latest-news">Latest News</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ghibliusa?igsh=NmM3bXR2ZmFjd3Bj" class="tooltipped btn-floating btn-small transparent" data-tooltip="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/GhibliUSA?mibextid=ZbWKwL" class="tooltipped btn-floating btn-small transparent" data-tooltip="Facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/GhibliUSA?t=f6znEvyE6U7XGMK63NQz6w&s=09" class="tooltipped btn-floating btn-small transparent" data-tooltip="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+            </ul>
+
+             <!-- Mobile Menu -->
+        <ul class="sidenav green lighten-4" id="mobile-menu">
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-home-mobile">
+              <i class="material-icons left">home</i> Home
+            </a>
+            <ul id="dropdown-home-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#studio-treasures">Studio Treasures</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-movies-mobile">
+              <i class="material-icons left">movie</i> Movies
+            </a>
+            <ul id="dropdown-movies-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="movies.html">Movies</a></li>
+              <li><a href="movies.html#top-films">Top Films</a></li>
+              <li><a href="movies.html#awards">Awards</a></li>
+            </ul>
+          </li>
+        <li>
+          <a class="dropdown-trigger" href="#!" data-target="dropdown-characters-mobile">
+            <i class="material-icons left">account_circle</i> Characters
+          </a>
+          <ul id="dropdown-characters-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="characters.html#famous-characters">Famous Characters</a></li>
+            <li><a href="characters.html#sceneries">Sceneries</a></li>
+          </ul>
+        </li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-gallery-mobile">
+              <i class="material-icons left">photo</i> Gallery
+            </a>
+            <ul id="dropdown-gallery-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="gallery.html#fan-art">Fan Art</a></li>
+              <li><a href="gallery.html#movie-clips">Movie Clips</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown-news-mobile">
+              <i class="material-icons left">newspaper</i> News
+            </a>
+            <ul id="dropdown-news-mobile" class="dropdown-content" style="background-color: rgba(0, 0, 0, 0.7)">
+              <li><a href="news.html">News</a></li>
+              <li><a href="news.html#latest-news">Latest News</a></li>
+            </ul>
+          </li>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid news-section scrollspy" id="latest-news">
+    <h5 class="news-header">Latest Studio Ghibli News</h5>
+
+    <div class="news-item row">
+        <div class="col s12 m4 l3">
+            <img src="img/totorofest.jpg" alt="Totoro Image" class="responsive-img">
+        </div>
+        <div class="col s12 m8 l9 news-content">
+            <a class="news-title flow-text">Totoro's 35th Anniversary Celebration Announced!</a>
+            <p class="news-description flow-text">Studio Ghibli has announced a major global event to celebrate the 35th anniversary of the iconic film "My Neighbor Totoro." The celebration will include special screenings of the film in theaters worldwide, showcasing the timeless appeal of this beloved animated masterpiece. In addition to the screenings, Ghibli will host a series of exhibitions featuring original artwork, concept designs, and behind-the-scenes footage, giving fans a unique opportunity to dive deeper into the creative process behind the film. Limited-edition merchandise will also be released, featuring classic Totoro designs and new artwork to commemorate the anniversary.</p>
+            <p class="news-date flow-text">Published on: April 04, 2023</p>
+        </div>
+    </div>
+
+    <div class="news-item row">
+        <div class="col s12 m4 l3">
+            <img src="img/sawins.webp" alt="Spirited Away Image" class="responsive-img">
+        </div>
+        <div class="col s12 m8 l9 news-content">
+            <a class="news-title flow-text">Spirited Away Stage Adaptation Wins Prestigious Award</a>
+            <p class="news-description flow-text">The stage adaptation of Studio Ghibli's "Spirited Away" has garnered critical acclaim and won the award for Best Theatrical Production of 2024. Premiering earlier this year, the stage production brought the magical world of the film to life, with stunning visual effects, elaborate sets, and powerful performances that captivated audiences of all ages. The adaptation was praised for its ability to remain faithful to the original animation while making the transition to the stage in an innovative and visually captivating way. The production's success has led to an extended run and has sparked new interest in the classic film, as well as future theatrical projects from Studio Ghibli.</p>
+            <p class="news-date flow-text">Published on: September 13, 2024</p>
+        </div>
+    </div>
+
+    <div class="news-item row">
+        <div class="col s12 m4 l3">
+            <img src="img/museum.webp" alt="Ghibli Museum Image" class="responsive-img">
+        </div>
+        <div class="col s12 m8 l9 news-content">
+            <a class="news-title flow-text">Ghibli Museum Unveils New Exhibit: The Making of Ponyo</a>
+            <p class="news-description flow-text">The Ghibli Museum in Mitaka, Japan, has unveiled a new exhibit dedicated to the creation of "Ponyo," one of Studio Ghibli’s most beloved films. The exhibit takes visitors behind the scenes of the film’s creation, offering a unique glimpse into the production process of the studio’s masterful animation techniques. Featuring original sketches, concept art, and even animatics, the exhibit explores how the film’s vibrant underwater world was brought to life with incredible attention to detail. Interactive displays allow visitors to learn about the voice acting, sound design, and animation techniques that made "Ponyo" a modern Ghibli classic. Fans can also view exclusive behind-the-scenes footage of Hayao Miyazaki and the team at work, making this exhibit a must-see for any Ghibli fan.</p>
+            <p class="news-date flow-text">Published on: December 22, 2021</p>
+        </div>
+    </div>
+</div>
+
+
+<section class="section container-fluid green lighten-4">
+    <div class="row">
+        <div class="col s12 center-align">
+            <h1 class="black-text flow-text">Studio Ghibli's Latest Released Movies</h1>
+            <p class="black-text flow-text text-justify">Experience the wonder of Studio Ghibli's legendary films, each a brilliant fusion of animation and storytelling.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 l4">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <img src="img/marniee.webp" class="responsive-img materialboxed">
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6 offset-l1 justify-text">
+            <h2 class="green-text text-darken-4 flow-text">When Marnie Was There</h2>
+            <p class="flow-text" style="text-align: justify;">A beautifully haunting tale of a young girl named Anna who befriends Marnie, a mysterious girl with a secret past. As Anna uncovers the truth behind their bond, she embarks on a journey of self-discovery and healing.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 l4 push-l7 offset-l1">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <img src="img/earwig.jpg" class="responsive-img materialboxed">
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6 pull-l4 justify-text">
+            <h2 class="green-text text-darken-4 flow-text">Earwig and the Witch</h2>
+            <p class="flow-text" style="text-align: justify;">In this CGI-animated film, Earwig, a clever and independent young girl, is adopted by a strange couple—an evil witch and a talking cat. With her wits and resourcefulness, Earwig navigates her new life, determined to control her destiny.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 l4">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <img src="img/boyheron.jpg" class="responsive-img materialboxed">
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6 offset-l1 justify-text">
+            <h2 class="green-text text-darken-4 flow-text">The Boy and the Heron</h2>
+            <p class="flow-text" style="text-align: justify;">A deeply magical story from Hayao Miyazaki, following a young boy’s journey through grief and wonder after the death of his mother. As he discovers a mystical world full of fantastical creatures, he learns about life, death, and the bonds that tie us all together.</p>
+        </div>
+    </div>
+</div>
+</section>
+  
+
+ <!-- Footer -->
+<footer class="page-footer grey">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m4">
+          <h5 class="black-text-text">Share Your Studio Ghibli Favorites</h5>
+          <p class="black-text">Let us know your favorite Ghibli movie and your name!</p>
+          <form id="ghibliForm">
+            <div class="input-field">
+              <input id="name" type="text" class="black-text" required>
+              <label for="name" class="black-text">Your Name</label>
+            </div>
+            <div class="input-field">
+              <input id="favorite_movie" type="text" class="black-text" required>
+              <label for="favorite_movie" class="black-text">Your Favorite Ghibli Movie</label>
+            </div>
+            <div class="center-align">
+              <button class="btn waves-effect waves-light green lighten-2" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col s12 m4">
+          <h5 class="wblack-text">Fans’ Favorite Movies</h5>
+          <ul id="commentsList" class="collection grey">
+          </ul>
+        </div>
+        <div class="col s12 m4">
+          <h5 class="wblack-text">Studio Ghibli Playlist</h5>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO30nlUS?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2024 Studio Ghibli. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="js/jquery.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+  $('.sidenav').sidenav();
+  $('.tooltipped').tooltip();
+  $('.scrollspy').scrollSpy();
+  $('.carousel').carousel();
+  $('.materialboxed').materialbox();
+  $('.parallax').parallax();
+  $('.dropdown-trigger').dropdown();
+});
+  $(document).ready(function () {
+      const commentsList = $('#commentsList');
+
+      function loadComments() {
+        const savedComments = JSON.parse(localStorage.getItem('ghibliComments')) || [];
+        savedComments.forEach(comment => {
+          commentsList.append(
+            `<li class="collection-item">"${comment.movie}" - <strong>${comment.name}</strong></li>`
+          );
+        });
+      }
+
+      function saveComment(name, movie) {
+        const savedComments = JSON.parse(localStorage.getItem('ghibliComments')) || [];
+        savedComments.push({ name, movie });
+        localStorage.setItem('ghibliComments', JSON.stringify(savedComments));
+      }
+
+      loadComments();
+
+      $('#ghibliForm').on('submit', function (e) {
+        e.preventDefault();
+
+        const name = $('#name').val().trim();
+        const favoriteMovie = $('#favorite_movie').val().trim();
+
+        if (name && favoriteMovie) {
+          commentsList.append(
+            `<li class="collection-item">"${favoriteMovie}" - <strong>${name}</strong></li>`
+          );
+          saveComment(name, favoriteMovie); 
+          $('#ghibliForm')[0].reset(); 
+        } else {
+          M.toast({ html: 'Please fill out both fields!', classes: 'red' });
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
